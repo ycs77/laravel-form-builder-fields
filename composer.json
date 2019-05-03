@@ -1,0 +1,49 @@
+{
+    "name": "ycs77/laravel-form-builder-fields",
+    "type": "library",
+    "description": "This Laravel form builder's more fields.",
+    "keywords": [
+        "ycs77",
+        "laravel-form-builder-fields"
+    ],
+    "homepage": "https://github.com/ycs77/laravel-form-builder-fields",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lucas Yang",
+            "email": "yangchenshin77@gmail.com"
+        }
+    ],
+    "require": {
+        "php" : "~7.1"
+    },
+    "require-dev": {
+        "kris/laravel-form-builder": "^1.16",
+        "orchestra/testbench": "~3.0",
+        "phpunit/phpunit": ">=7.0",
+        "ycs77/laravel-form-field-type": "^1.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ycs77\\LaravelFormBuilderFields\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ycs77\\LaravelFormBuilderFields\\Test\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ycs77\\LaravelFormBuilderFields\\FieldTypeServiceProvider"
+            ],
+            "aliases": {
+                "FieldType": "Ycs77\\LaravelFormBuilderFields\\Facades\\FieldType"
+            }
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
