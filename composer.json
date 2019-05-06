@@ -36,11 +36,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Ycs77\\LaravelFormBuilderFields\\FieldTypeServiceProvider"
-            ],
-            "aliases": {
-                "FieldType": "Ycs77\\LaravelFormBuilderFields\\Facades\\FieldType"
-            }
+                "Ycs77\\LaravelFormBuilderFields\\FieldsServiceProvider"
+            ]
         }
     },
     "config": {
