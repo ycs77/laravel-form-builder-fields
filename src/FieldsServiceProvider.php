@@ -3,7 +3,6 @@
 namespace Ycs77\LaravelFormBuilderFields;
 
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Str;
 
 class FieldsServiceProvider extends ServiceProvider
 {
@@ -16,21 +15,7 @@ class FieldsServiceProvider extends ServiceProvider
     {
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'laravel-form-builder');
 
-        $fields_name = [
-            'checkable_group',
-        ];
-
-        foreach ($fields_name as $field_name) {
-            $field_name_kebab = Str::kebab(Str::camel($field_name));
-
-            $this->publishes([
-                __DIR__ . "/../resources/views/$field_name.php" => resource_path("views/vendor/laravel-form-builder/$field_name.php"),
-            ], "laravel-form-$field_name_kebab-type");
-
-            $this->publishes([
-                __DIR__ . "/../resources/views-horizontal/$field_name.php" => resource_path("views/vendor/laravel-form-builder/$field_name.php"),
-            ], "laravel-form-$field_name_kebab-type-horizontal");
-        }
+        $this->registerPublishes();
     }
 
     /**
@@ -41,5 +26,46 @@ class FieldsServiceProvider extends ServiceProvider
     public function register()
     {
         //
+    }
+
+    /**
+     * Register resources publishes group.
+     *
+     * @return void
+     */
+    public function registerPublishes()
+    {
+        if ($this->app->runningInConsole()) {
+            $this->publishFieldResource('checkable_group');
+            $this->publishFieldResource('checkable_group', [], true);
+            $this->publishFieldResource('rich_editor', [
+                __DIR__ . '/../public' => public_path('vendor/laravel-form-builder-fields'),
+            ]);
+        }
+    }
+
+    /**
+     * Publish field resource.
+     *
+     * @return void
+     */
+    protected function publishFieldResource($name, $mergePaths = [], $isHorizontal = false)
+    {
+        $kebabName = str_replace('_', '-', $name);
+        $input_path = __DIR__ . "/../resources/views/$name.php";
+        $output_path = resource_path("views/vendor/laravel-form-builder/$name.php");
+        $tag = "laravel-form-builder-$kebabName-type";
+
+        if ($isHorizontal) {
+            $input_path =  __DIR__ . "/../resources/views-horizontal/$name.php";
+            $tag = "laravel-form-builder-$kebabName-type-horizontal";
+        }
+
+        if (file_exists($input_path)) {
+            $this->publishes(array_merge(
+                [$input_path => $output_path],
+                $mergePaths
+            ), $tag);
+        }
     }
 }
