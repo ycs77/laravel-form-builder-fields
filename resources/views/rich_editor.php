@@ -36,6 +36,7 @@ tinymce.init({
     menubar: false,
     statusbar: false,
     paste_data_images: true,
+    relative_urls: false,
     style_formats: [
         { title: 'Heading 1', format: 'h1' },
         { title: 'Heading 2', format: 'h2' },

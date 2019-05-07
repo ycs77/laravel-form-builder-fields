@@ -2,6 +2,7 @@
 
 ## 0.3.0
 - Modify UploadImageController validation
+- Disable relative url option to rich editor
 
 ## 0.2.0
 - Add Checkable group type
