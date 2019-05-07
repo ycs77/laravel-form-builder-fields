@@ -21,6 +21,26 @@ class UploadController extends Controller
     }
 
     /**
+     * Get custom messages for validator errors.
+     *
+     * @return array
+     */
+    public function validationMessages()
+    {
+        return [];
+    }
+
+    /**
+     * Get custom attributes for validator errors.
+     *
+     * @return array
+     */
+    public function validationAttributes()
+    {
+        return [];
+    }
+
+    /**
      * Storage path.
      *
      * @var string
@@ -30,7 +50,8 @@ class UploadController extends Controller
     /**
      * Response data.
      *
-     * @return array
+     * @param  string $fileUrl
+     * @return \Illuminate\Http\Response
      */
     public function response($fileUrl)
     {
@@ -44,10 +65,16 @@ class UploadController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
+     *
+     * @throws \Illuminate\Validation\ValidationException
      */
     public function storeImage(Request $request)
     {
-        $request->validate($this->validationRules());
+        $request->validate(
+            $this->validationRules(),
+            $this->validationMessages(),
+            $this->validationAttributes()
+        );
 
         $filePath = $request->file('upload_file')->store($this->storagePath);
         $fileUrl = Storage::url($filePath);
