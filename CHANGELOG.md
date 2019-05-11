@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 0.3.1
+- Fix CheckableGroupType child id is value
+
 ## 0.3.0
 - Modify UploadImageController validation
 - Disable relative url option to rich editor
