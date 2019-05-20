@@ -1,7 +1,10 @@
 # CHANGELOG
 
+## 0.3.2
+- Change Rich editor type's settings
+
 ## 0.3.1
-- Fix CheckableGroupType child id is value
+- Fix Checkable group type child id is value
 
 ## 0.3.0
 - Modify UploadImageController validation

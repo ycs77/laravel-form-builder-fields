@@ -29,22 +29,26 @@ tinymce.init({
     language: '<?= str_replace('-', '_', app()->getLocale()) ?>',
     height: 400,
     plugins: [
-        'advlist autolink link image lists charmap preview hr anchor pagebreak spellchecker',
-        'searchreplace wordcount visualblocks visualchars fullscreen insertdatetime media nonbreaking',
+        'advlist autolink link image media lists charmap',
+        'preview hr anchor pagebreak spellchecker',
+        'searchreplace wordcount visualblocks visualchars fullscreen insertdatetime nonbreaking',
         'save table directionality emoticons template paste'
     ],
-    menubar: false,
     statusbar: false,
     paste_data_images: true,
     relative_urls: false,
     style_formats: [
+        { title: 'Paragraph', format: 'p' },
         { title: 'Heading 1', format: 'h1' },
         { title: 'Heading 2', format: 'h2' },
-        { title: 'Heading 3', format: 'h3' }
+        { title: 'Heading 3', format: 'h3' },
+        { title: 'Heading 4', format: 'h4' },
+        { title: 'Heading 5', format: 'h5' },
+        { title: 'Heading 6', format: 'h6' }
     ],
     toolbar_drawer: 'sliding',
     toolbar: [
-        'preview | styleselect | undo redo copy paste | bold italic underline strikethrough',
+        'undo redo | styleselect | bold italic underline strikethrough',
         'forecolor backcolor emoticons | link image media table',
         'alignleft aligncenter alignright alignjustify | bullist numlist outdent indent'
     ]<?php if ($options['upload_image']): ?>,
