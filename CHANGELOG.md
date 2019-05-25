@@ -2,6 +2,7 @@
 
 ## 0.3.2
 - Change Rich editor type's settings
+- Update composer packages
 
 ## 0.3.1
 - Fix Checkable group type child id is value
