@@ -52,18 +52,18 @@ class FieldsServiceProvider extends ServiceProvider
     protected function publishFieldResource($name, $mergePaths = [], $isHorizontal = false)
     {
         $kebabName = str_replace('_', '-', $name);
-        $input_path = __DIR__ . "/../resources/views/$name.php";
-        $output_path = resource_path("views/vendor/laravel-form-builder/$name.php");
+        $inputPath = __DIR__ . "/../resources/views/$name.php";
+        $outputPath = resource_path("views/vendor/laravel-form-builder/$name.php");
         $tag = "laravel-form-builder-$kebabName-type";
 
         if ($isHorizontal) {
-            $input_path =  __DIR__ . "/../resources/views-horizontal/$name.php";
+            $inputPath =  __DIR__ . "/../resources/views-horizontal/$name.php";
             $tag = "laravel-form-builder-$kebabName-type-horizontal";
         }
 
-        if (file_exists($input_path)) {
+        if (file_exists($inputPath)) {
             $this->publishes(array_merge(
-                [$input_path => $output_path],
+                [$inputPath => $outputPath],
                 $mergePaths
             ), $tag);
         }
