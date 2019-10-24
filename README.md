@@ -2,7 +2,8 @@
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
-[![Build Status][ico-circleci]][link-circleci]
+[![Build Status][ico-ci]][link-ci]
+[![Style CI Build Status][ico-style-ci]][link-style-ci]
 [![Total Downloads][ico-downloads]][link-downloads]
 
 ## Install
@@ -262,11 +263,13 @@ class UploadController extends BaseUploadController
 
 ```
 
-[ico-version]: https://img.shields.io/packagist/v/ycs77/laravel-form-builder-fields.svg?style=flat
-[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat
-[ico-circleci]: https://img.shields.io/circleci/project/github/ycs77/laravel-form-builder-fields/master.svg?style=flat
-[ico-downloads]: https://img.shields.io/packagist/dt/ycs77/laravel-form-builder-fields.svg?style=flat
+[ico-version]: https://img.shields.io/packagist/v/ycs77/laravel-form-builder-fields.svg?style=flat-square
+[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
+[ico-ci]: https://img.shields.io/travis/ycs77/laravel-form-builder-fields?style=flat-square
+[ico-style-ci]: https://github.styleci.io/repos/185183010/shield?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/ycs77/laravel-form-builder-fields.svg?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/ycs77/laravel-form-builder-fields
-[link-circleci]: https://circleci.com/gh/ycs77/laravel-form-builder-fields
+[link-ci]: https://travis-ci.org/ycs77/laravel-form-builder-fields
+[link-style-ci]: https://github.styleci.io/repos/185183010
 [link-downloads]: https://packagist.org/packages/ycs77/laravel-form-builder-fields
