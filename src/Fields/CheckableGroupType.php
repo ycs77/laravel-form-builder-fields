@@ -12,12 +12,12 @@ class CheckableGroupType extends ParentType
     protected $checkableType = 'checkbox';
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     protected $valueProperty = 'selected';
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     protected function getTemplate()
     {
@@ -41,7 +41,7 @@ class CheckableGroupType extends ParentType
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     protected function getDefaults()
     {

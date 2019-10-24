@@ -7,7 +7,7 @@ use Kris\LaravelFormBuilder\Fields\FormField;
 class RichEditorType extends FormField
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     protected function getTemplate()
     {
@@ -15,7 +15,7 @@ class RichEditorType extends FormField
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     protected function getDefaults()
     {

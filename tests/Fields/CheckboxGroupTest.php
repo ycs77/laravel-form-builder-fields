@@ -1,6 +1,6 @@
 <?php
 
-namespace Ycs77\LaravelFormBuilderFields\Test;
+namespace Ycs77\LaravelFormBuilderFields\Test\Fields;
 
 use Illuminate\Translation\Translator;
 use Kris\LaravelFormBuilder\FormHelper;

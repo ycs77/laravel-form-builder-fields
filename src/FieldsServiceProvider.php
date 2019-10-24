@@ -57,7 +57,7 @@ class FieldsServiceProvider extends ServiceProvider
         $tag = "laravel-form-builder-$kebabName-type";
 
         if ($isHorizontal) {
-            $inputPath =  __DIR__ . "/../resources/views-horizontal/$name.php";
+            $inputPath = __DIR__ . "/../resources/views-horizontal/$name.php";
             $tag = "laravel-form-builder-$kebabName-type-horizontal";
         }
 
