@@ -92,7 +92,7 @@ class CheckableGroupType extends ParentType
                 $choice = null;
             }
 
-            $id = str_replace('.', '_', $this->getNameKey()) . '_' . $label;
+            $id = str_replace('.', '_', $this->getNameKey()) . '_' . $key;
             $options = $this->formHelper->mergeOptions(
                 $this->getOption('choice_options'),
                 [
