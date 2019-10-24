@@ -49,6 +49,7 @@ class CheckableGroupType extends ParentType
             'choices' => null,
             'selected' => null,
             'is_checkbox' => true,
+            'language_name' => null,
             'choice_options' => [
                 'wrapper' => false,
             ],
@@ -89,7 +90,6 @@ class CheckableGroupType extends ParentType
 
             if (is_numeric($key) && $choice !== null) {
                 $key = $choice;
-                $choice = null;
             }
 
             $id = str_replace('.', '_', $this->getNameKey()) . '_' . $key;
@@ -154,8 +154,12 @@ class CheckableGroupType extends ParentType
      */
     protected function childrenLabel($label)
     {
-        if ($langName = $this->parent->getLanguageName()) {
-            $label = sprintf('%s.%s', $langName, $label);
+        $langName = $this->options['language_name'];
+        // If field language name is false, never set it.
+        if ($langName !== false) {
+            if ($langName = $langName ?? $this->parent->getLanguageName()) {
+                $label = sprintf('%s.%s', $langName, $label);
+            }
         }
 
         return $this->formHelper->formatLabel($label);

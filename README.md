@@ -59,11 +59,21 @@ $this->add('field_name', 'checkable_group', [
     ],
     'is_checkbox' => true, // False is radio
     'selected' => ['en'],
+    'language_name' => 'test-lang-name',
     // 'choice_options' => [
     //     'wrapper' => [
     //         'class' => 'form-control',
     //     ],
     // ],
+]);
+```
+
+If you set `language_name` in the form but don't want to use it in the checkable group, you can set it to `false`:
+
+```php
+$this->add('field_name', 'checkable_group', [
+    ...
+    'language_name' => false,
 ]);
 ```
 

@@ -41,7 +41,7 @@ class TestCase extends OrchestraTestCase
     protected $formBuilder;
 
     /**
-     * @var \Kris\LaravelFormBuilder\EventDispatcher
+     * @var \Illuminate\Contracts\Events\Dispatcher
      */
     protected $eventDispatcher;
 
