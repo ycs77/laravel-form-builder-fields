@@ -1,8 +1,10 @@
 # CHANGELOG
 
-## 0.3.2
-- Change Rich editor type's settings
-- Update composer packages
+## v0.4.0
+### Added
+* Add checkable group field option language_name
+### Fixed
+* Fix checkable group field id has label text bug
 
 ## v0.3.2
 ### Changed
