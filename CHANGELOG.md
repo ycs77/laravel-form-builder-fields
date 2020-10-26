@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## Unrelease
+### Fixed
+* Fix namespace typo
+
 ## v0.4.0
 ### Added
 * Add checkable group field option language_name
