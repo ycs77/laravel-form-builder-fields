@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## Unrelease
+## v0.4.1
 ### Fixed
 * Fix namespace typo
 
