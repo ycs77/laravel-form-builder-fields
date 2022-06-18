@@ -1,5 +1,9 @@
 language: php
 
+branches:
+  only:
+    - main
+
 cache:
   directories:
     - $HOME/.composer/cache/files
@@ -11,14 +15,7 @@ php:
   - 7.4
 
 install:
-  - travis_retry composer install --prefer-dist --no-interaction
+  - travis_retry composer require "illuminate/contracts=^5.8" --dev --prefer-dist --no-interaction --no-suggest
 
 script:
   - vendor/bin/phpunit
-
-notifications:
-  email:
-    recipients:
-      - yangchenshin77@gmail.com
-    on_success: never
-    on_failure: always

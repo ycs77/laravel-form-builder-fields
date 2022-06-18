@@ -3,10 +3,8 @@
 namespace Ycs77\LaravelFormBuilderFields\Test;
 
 use Kris\LaravelFormBuilder\FormBuilder;
-use Kris\LaravelFormBuilder\FormBuilderServiceProvider;
 use Kris\LaravelFormBuilder\FormHelper;
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
-use Ycs77\LaravelFormBuilderFields\FieldsServiceProvider;
 
 class TestCase extends OrchestraTestCase
 {
@@ -85,8 +83,16 @@ class TestCase extends OrchestraTestCase
     protected function getPackageProviders($app)
     {
         return [
-            FormBuilderServiceProvider::class,
-            FieldsServiceProvider::class,
+            \Collective\Html\HtmlServiceProvider::class,
+            \Kris\LaravelFormBuilder\FormBuilderServiceProvider::class,
+            \Ycs77\LaravelFormBuilderFields\FieldsServiceProvider::class,
+        ];
+    }
+
+    protected function getPackageAliases($app)
+    {
+        return [
+            'Form' => \Collective\Html\FormFacade::class,
         ];
     }
 }
