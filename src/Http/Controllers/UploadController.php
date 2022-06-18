@@ -50,7 +50,7 @@ class UploadController extends Controller
     /**
      * Response data.
      *
-     * @param  string $fileUrl
+     * @param  string  $fileUrl
      * @return \Illuminate\Http\Response
      */
     public function response($fileUrl)
