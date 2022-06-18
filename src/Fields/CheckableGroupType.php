@@ -78,7 +78,7 @@ class CheckableGroupType extends ParentType
     /**
      * Build checkable children fields from checkable group type.
      *
-     * @param string $fieldType
+     * @param  string  $fieldType
      * @return void
      */
     protected function buildCheckableChildren($fieldType)
@@ -116,7 +116,7 @@ class CheckableGroupType extends ParentType
     /**
      * Creates default wrapper classes for the form element.
      *
-     * @param array $options
+     * @param  array  $options
      * @return array
      */
     protected function setDefaultClasses(array $options = [])
@@ -149,7 +149,7 @@ class CheckableGroupType extends ParentType
     /**
      * Return the label for the form field children.
      *
-     * @param string $label
+     * @param  string  $label
      * @return string
      */
     protected function childrenLabel($label)
